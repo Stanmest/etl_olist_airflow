@@ -1,0 +1,14 @@
+version: 2
+
+exposures:
+  - name: olist_ops_dashboard
+    type: dashboard
+    maturity: high
+    url: https://example.com/your-dashboard
+    description: Operations dashboard tracking daily revenue, orders, and late deliveries.
+    depends_on:
+      - ref('fact_revenue_by_day')
+      - ref('fact_order_items_enriched')
+    owner:
+      name: Stanley Mbah
+      email: stanmest77@gmail.com

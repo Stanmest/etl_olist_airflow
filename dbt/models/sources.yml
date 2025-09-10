@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: olist
+    schema: olist
+    database: olist_dw
+    tables:
+      - name: dim_customers
+      - name: dim_orders
+      - name: dim_products
+      - name: fact_order_items
+      - name: fact_payments
