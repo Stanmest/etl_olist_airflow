@@ -109,6 +109,24 @@ flowchart TD
 
 ---
 
+**Skills demonstrated:** Airflow • dbt • Postgres • Docker • Python (pandas) • SQL • Data modeling • Orchestration • Testing • Documentation
+
+---
+
+**Results:** ~99k customers • ~33k products • ~112k order items • ~104k payments loaded  
+**Data tests:** 28 passing • 0 failing (dbt)  
+**Pipeline:** idempotent (UPSERT dims, TRUNCATE+COPY facts)
+**Run in 60s:** `make up && make trigger && make counts`
+
+---
+
+![Stack](https://img.shields.io/badge/stack-Airflow%20%7C%20dbt%20%7C%20Postgres%20%7C%20Docker-black)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-blue)
+
+---
+
+
 ## 🏁 Summary
 
 This project demonstrates a production-style analytics pipeline on a real e-commerce dataset, built with **Airflow**, **pandas**, **Postgres**, and **dbt**. It’s **reproducible**, **documented**, and **safe to re-run**:
