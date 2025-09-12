@@ -74,3 +74,35 @@ flowchart TD
   D -->|sources| E
   E --> F
   F --> G
+```
+
+## 🙌 Credits
+
+- Dataset: **Olist Brazilian E-commerce** (Kaggle)  
+- Stack: **Airflow • Postgres • pandas • dbt**
+
+### 🗃️ Warehouse Models
+
+#### Dimensions
+- `olist.dim_customers` — city, state, unique customer keys  
+- `olist.dim_orders` — status + purchase/approval/delivery timestamps  
+- `olist.dim_products` — category & physical attributes  
+
+#### Facts
+- `olist.fact_order_items` — item-level price & freight  
+- `olist.fact_payments` — payment type, installments, value  
+
+#### Example mart
+- `fact_revenue_by_day` (dbt) enriches order items with order & product context for daily revenue analyses and a documented exposure.
+
+### ✅ Reliability Choices
+- **Transform → Load interface:** write **Parquet** to `/opt/airflow/data/processed/`; pass **file paths** via XCom (tiny payloads).
+- **Load implementation:** bulk-ingest with **COPY**, then:
+  - **UPSERT** into `dim_customers`, `dim_orders`, `dim_products`
+  - **TRUNCATE + COPY** for `fact_order_items`, `fact_payments`
+- **Re-run safety:** design is **idempotent** and avoids common pandas/SQLAlchemy pitfalls.
+
+### 🧪 Testing & Documentation
+- dbt **schema tests** (e.g., `not_null`, `relationships`, `accepted_values`) and **data tests** pass.
+- `dbt docs generate` builds searchable documentation with **lineage graphs** and **exposures**.
+- Optional: publish docs via **GitHub Pages** (copy `dbt/target` → `/docs`, enable Pages).
