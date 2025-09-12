@@ -106,3 +106,17 @@ flowchart TD
 - dbt **schema tests** (e.g., `not_null`, `relationships`, `accepted_values`) and **data tests** pass.
 - `dbt docs generate` builds searchable documentation with **lineage graphs** and **exposures**.
 - Optional: publish docs via **GitHub Pages** (copy `dbt/target` → `/docs`, enable Pages).
+
+---
+
+## 🏁 Summary
+
+This project demonstrates a production-style analytics pipeline on a real e-commerce dataset, built with **Airflow**, **pandas**, **Postgres**, and **dbt**. It’s **reproducible**, **documented**, and **safe to re-run**:
+
+- Orchestrated ETL with Airflow: **extract → transform (Parquet) → load (COPY)**
+- **Idempotent loads:** UPSERTed dimensions, TRUNCATE+COPY facts
+- **Performance & reliability:** Parquet handoff avoids XCom limits; bulk COPY beats `to_sql`
+- **Quality & clarity:** dbt tests, lineage, and docs for transparent data modeling
+- **Dev-ready:** Dockerized stack, quickstart scripts, and CLI checks for fast evaluation
+
+If you’re reviewing this for hiring: the repo reflects how I design pragmatic, reliable data pipelines focused on correctness first, with clean interfaces, observability, and documentation that teams can trust and extend.
