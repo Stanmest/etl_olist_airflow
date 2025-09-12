@@ -120,12 +120,13 @@ flowchart TD
 
 ---
 
-![Stack](https://img.shields.io/badge/stack-Airflow%20%7C%20dbt%20%7C%20Postgres%20%7C%20Docker-black)
-![Status](https://img.shields.io/badge/status-active-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-blue)
+## 🖱️ Use-cases
+- Daily revenue trend 
+- Delivery speed analysis 
+- Top categories 
+- Payment-mix by state
 
 ---
-
 
 ## 🏁 Summary
 
