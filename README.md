@@ -138,4 +138,4 @@ This project demonstrates a production-style analytics pipeline on a real e-comm
 - **Quality & clarity:** dbt tests, lineage, and docs for transparent data modeling
 - **Dev-ready:** Dockerized stack, quickstart scripts, and CLI checks for fast evaluation
 
-If you’re reviewing this for hiring: the repo reflects how I design pragmatic, reliable data pipelines focused on correctness first, with clean interfaces, observability, and documentation that teams can trust and extend.
+If you’re reviewing this for hiring: the repo reflects how I design pragmatic, reliable data pipelines focused on correctness first, with clean interfaces, observability, and documentation that teams can trust and extend on.
