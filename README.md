@@ -124,7 +124,7 @@ flowchart TD
 - Daily revenue trend 
 - Delivery speed analysis 
 - Top categories 
-- Payment-mix by state
+- Payment-mix by states
 
 ---
 
